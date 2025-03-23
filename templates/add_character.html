@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить персонажа</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Добавить нового персонажа</h1>
+
+    <form action="" method="POST">
+        <label>Имя:</label>
+        <input type="text" name="name" required>
+
+        <label>Цитата:</label>
+        <input type="text" name="quote">
+
+        <label>Полное имя:</label>
+        <input type="text" name="full_name">
+
+        <label>Пол:</label>
+        <select name="gender" required>
+            <option value="Мужской">Мужской</option>
+            <option value="Женский">Женский</option>
+            <option value="Неизвестно">Неизвестно</option>
+        </select>
+
+        <label>Возраст:</label>
+        <input type="number" name="age">
+
+        <label>Происхождение:</label>
+        <select name="origin" required>
+            <option value="Материк">Материк</option>
+            <option value="Остров">Остров</option>
+            <option value="Обратная Сторона">Обратная Сторона</option>
+            <option value="Неизвестно">Неизвестно</option>
+        </select>
+
+        <label>Религия:</label>
+        <select name="religion" required>
+            <option value="Язычество">Язычество</option>
+            <option value="Равноденствие">Равноденствие</option>
+            <option value="Религия Белых Охотников">Религия Белых Охотников</option>
+            <option value="Культ">Культ</option>
+            <option value="Христианство">Христианство</option>
+            <option value="Нет">Нет</option>
+            <option value="Неизвестно">Неизвестно</option>
+        </select>
+
+        <label>Первое появление:</label>
+        <input type="text" name="first_appearance">
+
+        <label>Изображение (URL):</label>
+        <input type="text" name="image">
+
+        <label>Внешность:</label>
+        <textarea name="appearance" required></textarea>
+
+        <label>Характер:</label>
+        <textarea name="personality" required></textarea>
+
+        <label>История:</label>
+        <textarea name="history" required></textarea>
+
+        <button type="submit">Добавить персонажа</button>
+    </form>
+</body>
+</html>

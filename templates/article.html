@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ article.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="article-page">
+
+    <!-- Контейнер страницы -->
+    <div class="content-container">
+
+        <!-- Заголовок статьи -->
+        <h1 class="article-title">{{ article.title }}</h1>
+
+        <!-- Основной контент -->
+        <div class="article-content">
+            <p class="section-content">{{ article.content }}</p>
+        </div>
+
+        <!-- Кнопка "Назад на главную" -->
+        <a href="{{ url_for('index') }}" class="back-button">Назад на главную</a>
+
+    </div>
+
+</body>
+</html>

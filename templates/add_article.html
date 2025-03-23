@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить статью</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Добавить новую статью</h1>
+    <form method="POST">
+        <label>Заголовок:</label>
+        <input type="text" name="title" required>
+        <label>Содержание:</label>
+        <textarea name="content" required></textarea>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

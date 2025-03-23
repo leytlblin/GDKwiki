@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ place.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="place-page">
+    <div class="content-container">
+        <h1 class="place-name">{{ place.name }}</h1>
+
+        {% if place.quote %}
+            <blockquote class="place-quote">{{ place.quote }}</blockquote>
+        {% endif %}
+
+        <div class="place-content">
+            <!-- Левая колонка: изображение + таблица -->
+            <div class="place-info">
+                {% if place.image %}
+                    <div class="place-image">
+                        <img src="{{ place.image }}" alt="{{ place.name }}">
+                    </div>
+                {% endif %}
+                
+                <table class="place-table">
+                    <tr>
+                        <th>Местонахождение</th>
+                        <td>{{ place.location }}</td>
+                    </tr>
+                    <tr>
+                        <th>Первое появление</th>
+                        <td>{{ place.first_appearance }}</td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Правая колонка: Описание и История -->
+            <div class="place-text">
+                <h2 class="section-title">Описание</h2>
+                <p class="section-content">{{ place.description }}</p>
+
+                <h2 class="section-title">История</h2>
+                <p class="section-content">{{ place.history }}</p>
+            </div>
+        </div>
+
+        <a href="{{ url_for('index') }}" class="back-button">Назад на главную</a>
+    </div>
+</body>
+</html>

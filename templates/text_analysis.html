@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анализ текста</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="text-analysis-page">
+    <header>
+        <h1>Анализ текста</h1>
+        <nav>
+            <a href="/">Главная</a> |
+            <a href="/add_character">Добавить персонажа</a> |
+            <a href="/add_place">Добавить место</a> |
+            <a href="/add_article">Добавить статью</a> |
+            <a href="/text_analysis">Анализ текста</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="analysis-section">
+            <h2>Облако слов</h2>
+            <img src="{{ url_for('static', filename='wordcloud.png') }}" alt="Облако слов">
+        </section>
+
+        <section class="analysis-section">
+            <h2>Распределение частей речи</h2>
+            <img src="{{ url_for('static', filename='pos_distribution.png') }}" alt="Распределение частей речи">
+        </section>
+
+        <section class="analysis-section">
+            <h2>10 самых частотных глаголов</h2>
+            <img src="{{ url_for('static', filename='verbs.png') }}" alt="Частотные глаголы">
+        </section>
+
+        <section class="analysis-section">
+            <h2>10 самых частотных существительных</h2>
+            <img src="{{ url_for('static', filename='nouns.png') }}" alt="Частотные существительные">
+        </section>
+
+        <section class="analysis-section">
+            <h2>10 самых частотных прилагательных</h2>
+            <img src="{{ url_for('static', filename='adjs.png') }}" alt="Частотные прилагательные">
+        </section>
+    </main>
+</body>
+</html>

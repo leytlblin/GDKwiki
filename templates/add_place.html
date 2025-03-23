@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить место</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <h1>Добавить новое место</h1>
+
+    <form action="" method="POST">
+        <!-- Название места -->
+        <label>Название места:</label>
+        <input type="text" name="name" required>
+
+        <!-- Цитата о месте -->
+        <label>Цитата:</label>
+        <input type="text" name="quote">
+
+        <!-- Изображение-референс -->
+        <label>Изображение (URL):</label>
+        <input type="text" name="image">
+
+        <!-- Местонахождение -->
+        <label>Местонахождение:</label>
+        <input type="text" name="location" required>
+
+        <!-- Первое появление -->
+        <label>Первое появление:</label>
+        <input type="text" name="first_appearance">
+
+        <!-- Описание -->
+        <label>Описание:</label>
+        <textarea name="description"></textarea>
+
+        <!-- История -->
+        <label>История:</label>
+        <textarea name="history"></textarea>
+
+        <button type="submit">Добавить место</button>
+    </form>
+</body>
+</html>

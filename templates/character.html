@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ character.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body class="character-page">
+
+    <!-- Контейнер страницы -->
+    <div class="content-container">
+
+        <!-- Заголовок -->
+        <h1 class="character-name">{{ character.name }}</h1>
+
+        <!-- Цитата персонажа -->
+        {% if character.quote %}
+        <div class="character-quote">
+            <p>"{{ character.quote }}"</p>
+        </div>
+        {% endif %}
+
+        <!-- Основной контент -->
+        <div class="character-content">
+
+            <!-- Левая часть (информация) -->
+            <div class="character-info">
+
+                <!-- Изображение персонажа -->
+                <div class="character-image">
+                    <img src="{{ character.image or '/static/default-character.png' }}" alt="{{ character.name }}">
+                </div>
+
+                <!-- Таблица информации -->
+                <div class="character-table">
+                    <h2>Информация о персонаже</h2>
+                    <table>
+                        <tr><th>Полное имя:</th><td>{{ character.full_name or "Неизвестно" }}</td></tr>
+                        <tr><th>Возраст:</th><td>{{ character.age or "Неизвестно" }}</td></tr>
+                        <tr><th>Пол:</th><td>{{ character.gender or "Неизвестно" }}</td></tr>
+                        <tr><th>Происхождение:</th><td>{{ character.origin or "Неизвестно" }}</td></tr>
+                        <tr><th>Религия:</th><td>{{ character.religion or "Неизвестно" }}</td></tr>
+                        <tr><th>Первое появление:</th><td>{{ character.first_appearance or "Неизвестно" }}</td></tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <!-- Правая часть (текст персонажа) -->
+            <div class="character-text">
+                <h2>Внешность</h2>
+                <p>{{ character.appearance or "Описание отсутствует." }}</p>
+
+                <h2>Характер</h2>
+                <p>{{ character.personality or "Описание отсутствует." }}</p>
+
+                <h2>История</h2>
+                <p>{{ character.history or "Описание отсутствует." }}</p>
+            </div>
+
+        </div>
+
+        <!-- Кнопка "Назад на главную" -->
+        <a href="{{ url_for('index') }}" class="back-button">Назад на главную</a>
+
+    </div>
+
+</body>
+</html>

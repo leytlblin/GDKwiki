@@ -1,0 +1,607 @@
+/* это очень костыльный файл, но я боюсь удалять куски, потому что все ломается */
+
+
+/* шрифты */
+@font-face {
+    font-family: 'Templegarten';
+    src: url('/static/fonts/Templegarten.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+p {
+    font-family: 'Tahoma', sans-serif;
+}
+
+td {
+    font-family: 'Tahoma', sans-serif;
+}
+
+button {
+    font-family: 'Templegarten', sans-serif;
+}
+
+
+
+/* общие стили */
+body {
+    font-family: 'Templegarten', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #B0CBE5;
+    color: #1A2849;
+}
+
+/* заголовки */
+header h1 {
+    color: #B0CBE5;
+}
+
+h2, h3 {
+    color: #1A2849;
+}
+
+/* шапка сайта */
+header {
+    background-color: #1A2849;
+    padding: 15px;
+    text-align: center;
+}
+
+/* ссылки в шапке */
+nav a {
+    color: #B0CBE5;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #7b93c0;
+}
+
+/* основной контент */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.left-column {
+    width: 40%;
+    padding-right: 20px;
+}
+
+.right-column {
+    width: 55%;
+    text-align: left;
+}
+
+.images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.images img {
+    width: 48%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+
+.content-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.content-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-section li {
+    margin-bottom: 5px;
+}
+
+/* ссылки */
+a {
+    color: #1A2849;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #7b93c0;
+}
+
+/* кнопки */
+button {
+    display: inline-block;
+    background-color: #1A2849;
+    color: #B0CBE5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #0F1C36;
+    color: #7b93c0;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: #1A2849;
+    color: #B0CBE5;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #0F1C36;
+    color: #7b93c0;
+}
+
+/* списки */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin: 8px 0;
+}
+
+/* футер */
+footer {
+    background-color: #1A2849;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+/* фон страницы персонажа */
+.character-page {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: #1A2849;
+}
+
+/* полупрозрачный контейнер с текстом */
+.content-box {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(26, 40, 73, 0.8);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+h1 {
+    text-align: center;
+    color: #1A2849;
+}
+
+/* ссылки */
+a {
+    color: #1A2849;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* стили для форм */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #91a7cf;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #1A2849;
+}
+
+input, select, textarea {
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #B0CBE5;
+    border-radius: 5px;
+    background: #1A2849;
+    color: #B0CBE5;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+
+
+/* стили для изображений места */
+.place-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+
+/* основной фон страницы */
+body.character-page {
+    background-color: #B0CBE5;
+    color: #1A2849;
+    font-family: 'Templegarten', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* контейнер страницы */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(4, 60, 120, 0.5);
+}
+
+/* заголовок персонажа */
+.character-name {
+    text-align: center;
+    font-size: 2.8em;
+    color: #1A2849;
+    text-shadow: 2px 2px 10px rgba(26, 40, 73, 0.8);
+    margin-bottom: 10px;
+}
+
+/* окно с цитатой */
+.character-quote {
+    background: rgba(26, 40, 73, 0.2);
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    font-style: italic;
+    border-left: 5px solid #1A2849;
+    color: #1A2849;
+    font-weight: bold;
+}
+
+/* основной контент */
+.character-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.character-text h2 {
+    color: #1A2849 !important;
+}
+
+.character-table th {
+    color: #1A2849 !important;
+}
+
+/* левая колонка */
+.character-info {
+    width: 35%;
+}
+
+/* изображение персонажа */
+.character-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #1A2849;
+    box-shadow: 0 0 10px rgba(26, 40, 73, 0.7);
+}
+
+/* таблица информации */
+.character-table {
+    margin-top: 15px;
+    background: rgba(26, 40, 73, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* заголовки разделов */
+.section-title {
+    font-size: 2em;
+    color: #1A2849;
+    border-bottom: 3px solid #1A2849;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* текст внутри разделов */
+.section-content {
+    color: #1A2849;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+.character-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.character-table th,
+.character-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.character-table th {
+    text-align: left;
+    font-weight: bold;
+    color: #f7f020;
+}
+
+/* правая колонка: текст */
+.character-text {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.character-text h2 {
+    color: #f7f020;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* основной фон страницы места */
+body.place-page {
+    background-color: #B0CBE5; /* Светло-голубой фон */
+    color: #1A2849; /* Темно-синий текст */
+    font-family: 'Templegarten', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* контейнер страницы */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(4, 60, 120, 0.5);
+}
+
+/* заголовок места */
+.place-name {
+    text-align: center;
+    font-size: 2.8em;
+    color: #1A2849; /* Темно-синий заголовок */
+    text-shadow: 2px 2px 10px rgba(26, 40, 73, 0.8);
+    margin-bottom: 10px;
+}
+
+/* окно с цитатой */
+.place-quote {
+    background: rgba(26, 40, 73, 0.2);
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    font-style: italic;
+    border-left: 5px solid #1A2849;
+    color: #1A2849;
+    font-weight: bold;
+}
+
+/* основной фон страницы места */
+body.place-page {
+    background-color: #B0CBE5;
+    color: #1A2849 !important;
+    font-family: 'Templegarten', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* контейнер страницы */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(4, 60, 120, 0.5);
+}
+
+/* заголовок места */
+.place-name {
+    text-align: center;
+    font-size: 2.8em;
+    color: #1A2849 !important;
+    text-shadow: 2px 2px 10px rgba(26, 40, 73, 0.8);
+    margin-bottom: 10px;
+}
+
+/* окно с цитатой */
+.place-quote {
+    background: rgba(26, 40, 73, 0.2);
+    padding: 15px;
+    margin: 10px auto;
+    width: 80%;
+    text-align: center;
+    font-style: italic;
+    border-left: 5px solid #1A2849 !important;
+    color: #1A2849 !important;
+    font-weight: bold;
+}
+
+/* основной контент */
+.place-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* левая колонка: изображение + таблица */
+.place-info {
+    width: 35%;
+}
+
+/* изображение места */
+.place-image img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #1A2849 !important;
+    box-shadow: 0 0 10px rgba(26, 40, 73, 0.7);
+}
+
+/* таблица информации */
+.place-table {
+    margin-top: 15px;
+    background: rgba(26, 40, 73, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.place-table th,
+.place-table td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.place-table th {
+    text-align: left;
+    font-weight: bold;
+    color: #f7f020;
+}
+
+/* правая колонка: текст */
+.place-text {
+    width: 60%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.place-text h2 {
+    color: #f7f020 !important;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    padding-bottom: 5px;
+    margin-top: 15px;
+}
+
+/* заголовки разделов */
+.section-title {
+    font-size: 2em;
+    color: #1A2849 !important; /* Темно-синий */
+    border-bottom: 3px solid #1A2849 !important;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* заголовки в таблице */
+.place-table th {
+    text-align: left;
+    font-weight: bold;
+    color: #1A2849 !important;
+}
+
+/* текст внутри разделов */
+.section-content {
+    color: #1A2849 !important;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* заголовки разделов */
+.place-text h2 {
+    color: #1A2849 !important;
+    border-bottom: 3px solid #1A2849 !important;
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* основной фон страницы статьи */
+body.article-page {
+    background-color: #B0CBE5;
+    color: #1A2849;
+    font-family: 'Templegarten', serif;
+    margin: 0;
+    padding: 20px;
+}
+
+/* контейнер страницы */
+.content-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(4, 60, 120, 0.5);
+}
+
+/* заголовок статьи */
+.article-title {
+    text-align: center;
+    font-size: 2.8em;
+    color: #1A2849;
+    text-shadow: 2px 2px 10px rgba(26, 40, 73, 0.8);
+    margin-bottom: 10px;
+}
+
+/* основной контент */
+.article-content {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* текст статьи */
+.article-content p {
+    color: #1A2849;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* стили для страницы анализа */
+.text-analysis-page main.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.text-analysis-page .analysis-section {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.text-analysis-page .analysis-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}

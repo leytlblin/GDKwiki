@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ГДК фандом</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+<body>
+    <header>
+        <h1>Добро пожаловать на остров</h1>
+        <nav>
+            <a href="/">Главная</a> |
+            <a href="/add_character">Добавить персонажа</a> |
+            <a href="/add_place">Добавить место</a> |
+            <a href="/add_article">Добавить статью</a> |
+            <a href="/text_analysis">Анализ текста</a>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <section class="left-column">
+            <h2>О сайте</h2>
+            <p>Привет! Этот сайт посвящен фандомной части моей книги Город для кита (или ГДК по-простому). Я надеюсь, что он сможет помочь всем заинтересованным чуть-чуть лучше разобраться во всем, что происходит, даже если пока что тут полупусто. Не секрет, что прямо сейчас сам текст со скрипом проходит через все девять кругов ада российского книжного рынка, но время ожидания можно скрасить фандомными штуковинами. Приятного пользования!</p>
+            <div class="images">
+                <img src="{{ url_for('static', filename='image1.jpg') }}" alt="постер1">
+                <img src="{{ url_for('static', filename='image2.jpg') }}" alt="постер2">
+            </div>
+        </section>
+        
+        <section class="right-column">
+            <div class="content-section">
+                <h2>Персонажи</h2>
+                <ul>
+                    {% for character in characters %}
+                        <li><a href="{{ url_for('character_page', character_id=character.id) }}">{{ character.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2>Места</h2>
+                <ul>
+                    {% for place in places %}
+                        <li><a href="{{ url_for('place_page', place_id=place.id) }}">{{ place.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="content-section">
+                <h2>Статьи</h2>
+                <ul>
+                    {% for article in articles %}
+                        <li><a href="{{ url_for('article_page', article_id=article.id) }}">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>Анализ текста</h2>
+                <p>Здесь графики и немножко статистики анализа текста</p>
+                <a href="{{ url_for('text_analysis') }}" class="analysis-link">Перейти к анализу текста</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
